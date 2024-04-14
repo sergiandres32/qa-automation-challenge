@@ -17,6 +17,8 @@ jobs:
       run: npm run setup
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Set NODE_OPTIONS
+      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
     - name: Prepare App
       run: npm start &
     - name: Run Playwright tests
