@@ -10,14 +10,16 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "node start-client.js",
-    "setup": "npm i && cd client && npm i",
-    "lint": "eslint ."
+    "setup": "npm i --legacy-peer-deps && cd client && npm i --legacy-peer-deps",
+    "lint": "eslint .",
+    "test": "playwright test"
   },
   "devDependencies": {
     "@babel/core": "7.5.4",
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7",
     "babel-eslint": "10.0.1",
     "concurrently": "4.1.1",
-    "eslint": "^6.1.0",
     "eslint-config-airbnb": "17.1.1",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
